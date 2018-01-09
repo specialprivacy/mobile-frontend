@@ -12,6 +12,8 @@ import ActionExplore from 'material-ui/svg-icons/action/explore';
 import TV from 'material-ui/svg-icons/hardware/tv';
 import ActionLanguage from 'material-ui/svg-icons/action/language';
 
+import data from './texts.json';
+
 
 class App extends Component {
 
@@ -26,7 +28,7 @@ class App extends Component {
             "macbook-577758_1920.jpg",
             "belgium-2628337_1920.jpg",
         ],
-        dummyText: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet.".split(" "),
+        texts: data,
     };
 
     consent = (e, index, isInputChecked) => {
@@ -87,20 +89,20 @@ class App extends Component {
                                 </CardMedia>
                                 <div style={{background: color, height: "10px"}}></div>
                                 <CardText>
-                                    <h1 style={{marginTop: 0}}>Welcome to the Belgian coast!</h1>
-                                    <p>{ this.state.dummyText.slice(0, 50).join(" ") }</p>
+                                    <h1 style={{marginTop: 0}}>{this.state.texts.title}</h1>
+                                    <p dangerouslySetInnerHTML={{__html: this.state.texts.welcomeText}}></p>
+                                    <p><small>{ this.state.texts.welcomeSmallText }</small></p>
 
                                     <Card style={{marginBottom: "20px"}}>
                                         <CardHeader
-                                            title={<span><Smartphone style={{verticalAlign: "middle", marginRight: "10px"}}/>Telephony data</span>}
+                                            title={<span><Smartphone style={{verticalAlign: "middle", marginRight: "10px"}}/>{this.state.texts.label1}</span>}
                                             actAsExpander={true}
                                             showExpandableButton={true}
                                         />
                                         <CardText expandable={true}>
-                                            <p>{ this.state.dummyText.slice(0, 50).join(" ") }</p>
-                                            <p>{ this.state.dummyText.slice(50, 90).join(" ") }</p>
+                                            <p dangerouslySetInnerHTML={{__html: this.state.texts.page1}}></p>
                                             <Checkbox
-                                                label={this.state.dummyText.slice(0, 9).join(" ")}
+                                                label={this.state.texts.consent1}
                                                 onCheck={this.consent.bind(null, null, 0)}
                                                 checked={this.state.consent[0]}
                                             />
@@ -108,15 +110,14 @@ class App extends Component {
                                     </Card>
                                     <Card style={{marginBottom: "20px"}}>
                                         <CardHeader
-                                            title={<span><ActionExplore style={{verticalAlign: "middle", marginRight: "10px"}}/>Location information</span>}
+                                            title={<span><ActionExplore style={{verticalAlign: "middle", marginRight: "10px"}}/>{this.state.texts.label2}</span>}
                                             actAsExpander={true}
                                             showExpandableButton={true}
                                         />
                                         <CardText expandable={true}>
-                                            <p>{ this.state.dummyText.slice(0, 50).join(" ") }</p>
-                                            <p>{ this.state.dummyText.slice(50, 90).join(" ") }</p>
+                                            <p dangerouslySetInnerHTML={{__html: this.state.texts.page2}}></p>
                                             <Checkbox
-                                                label={this.state.dummyText.slice(0, 9).join(" ")}
+                                                label={this.state.texts.consent2}
                                                 onCheck={this.consent.bind(null, null, 1)}
                                                 checked={this.state.consent[1]}
                                             />
@@ -124,15 +125,14 @@ class App extends Component {
                                     </Card>
                                     <Card style={{marginBottom: "20px"}}>
                                         <CardHeader
-                                            title={<span><TV style={{verticalAlign: "middle", marginRight: "10px"}}/>Television data</span>}
+                                            title={<span><TV style={{verticalAlign: "middle", marginRight: "10px"}}/>{this.state.texts.label3}</span>}
                                             actAsExpander={true}
                                             showExpandableButton={true}
                                         />
                                         <CardText expandable={true}>
-                                            <p>{ this.state.dummyText.slice(0, 50).join(" ") }</p>
-                                            <p>{ this.state.dummyText.slice(50, 90).join(" ") }</p>
+                                            <p dangerouslySetInnerHTML={{__html: this.state.texts.page3}}></p>
                                             <Checkbox
-                                                label={this.state.dummyText.slice(0, 9).join(" ")}
+                                                label={this.state.texts.consent3}
                                                 onCheck={this.consent.bind(null, null, 2)}
                                                 checked={this.state.consent[2]}
                                             />
@@ -140,15 +140,14 @@ class App extends Component {
                                     </Card>
                                     <Card style={{marginBottom: "20px"}}>
                                         <CardHeader
-                                            title={<span><ActionLanguage style={{verticalAlign: "middle", marginRight: "10px"}}/>Browsing history</span>}
+                                            title={<span><ActionLanguage style={{verticalAlign: "middle", marginRight: "10px"}}/>{this.state.texts.label4}</span>}
                                             actAsExpander={true}
                                             showExpandableButton={true}
                                         />
                                         <CardText expandable={true}>
-                                            <p>{ this.state.dummyText.slice(0, 50).join(" ") }</p>
-                                            <p>{ this.state.dummyText.slice(50, 90).join(" ") }</p>
+                                            <p dangerouslySetInnerHTML={{__html: this.state.texts.page4}}></p>
                                             <Checkbox
-                                                label={this.state.dummyText.slice(0, 9).join(" ")}
+                                                label={this.state.texts.consent4}
                                                 onCheck={this.consent.bind(null, null, 3)}
                                                 checked={this.state.consent[3]}
                                             />

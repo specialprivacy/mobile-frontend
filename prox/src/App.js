@@ -8,6 +8,7 @@ import FlatButton from 'material-ui/FlatButton';
 // import Divider from 'material-ui/Divider';
 import Checkbox from 'material-ui/Checkbox';
 import Pagination from './Pagination';
+import data from './texts.json';
 
 class App extends Component {
 
@@ -22,7 +23,7 @@ class App extends Component {
             "macbook-577758_1920.jpg",
             "belgium-2628337_1920.jpg",
         ],
-        dummyText: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet.".split(" "),
+        texts: data,
     };
 
     consent = (e, index, isInputChecked) => {
@@ -89,70 +90,65 @@ class App extends Component {
                                 <CardText>
                                     <SwipeableViews index={this.state.slideIndex}>
                                         <div>
-                                            <h1 style={{marginTop: 0}}>Welcome to the Belgian coast!</h1>
-                                            <p>{ this.state.dummyText.slice(0, 40).join(" ") }</p>
-                                            <p>{ this.state.dummyText.slice(50, 80).join(" ") }</p>
-                                            <p><small>{ this.state.dummyText.slice(0, 15).join(" ") }</small></p>
+                                            <h1 style={{marginTop: 0}}>{ this.state.texts.title }</h1>
+                                            <p dangerouslySetInnerHTML={{__html: this.state.texts.welcomeText}}></p>
+                                            <p><small>{ this.state.texts.welcomeSmallText }</small></p>
                                         </div>
                                         <div>
-                                            <p>{ this.state.dummyText.slice(0, 50).join(" ") }</p>
-                                            <p>{ this.state.dummyText.slice(50, 90).join(" ") }</p>
+                                            <p dangerouslySetInnerHTML={{__html: this.state.texts.page1}}></p>
                                             <Checkbox
-                                                label={this.state.dummyText.slice(0, 9).join(" ")}
+                                                label={ this.state.texts.consent1 }
                                                 onCheck={this.consent.bind(null, null, 0)}
                                                 checked={this.state.consent[0]}
                                             />
                                         </div>
                                         <div>
-                                            <p>{ this.state.dummyText.slice(0, 50).join(" ") }</p>
-                                            <p>{ this.state.dummyText.slice(50, 90).join(" ") }</p>
+                                            <p dangerouslySetInnerHTML={{__html: this.state.texts.page2}}></p>
                                             <Checkbox
-                                                label={this.state.dummyText.slice(0, 9).join(" ")}
+                                                label={ this.state.texts.consent2 }
                                                 onCheck={this.consent.bind(null, null, 1)}
                                                 checked={this.state.consent[1]}
                                             />
                                         </div>
                                         <div>
-                                            <p>{ this.state.dummyText.slice(0, 50).join(" ") }</p>
-                                            <p>{ this.state.dummyText.slice(50, 90).join(" ") }</p>
+                                            <p dangerouslySetInnerHTML={{__html: this.state.texts.page3}}></p>
                                             <Checkbox
-                                                label={this.state.dummyText.slice(0, 9).join(" ")}
+                                                label={ this.state.texts.consent3 }
                                                 onCheck={this.consent.bind(null, null, 2)}
                                                 checked={this.state.consent[2]}
                                             />
                                         </div>
                                         <div>
-                                            <p>{ this.state.dummyText.slice(0, 50).join(" ") }</p>
-                                            <p>{ this.state.dummyText.slice(50, 90).join(" ") }</p>
+                                            <p dangerouslySetInnerHTML={{__html: this.state.texts.page4}}></p>
                                             <Checkbox
-                                                label={this.state.dummyText.slice(0, 9).join(" ")}
+                                                label={ this.state.texts.consent4 }
                                                 onCheck={this.consent.bind(null, null, 3)}
                                                 checked={this.state.consent[3]}
                                             />
                                         </div>
                                         <div>
-                                            <p>{ this.state.dummyText.slice(0, 17).join(" ") }</p>
+                                            <p>{ this.state.texts.summaryText }</p>
                                             <Checkbox
-                                                label={this.state.dummyText.slice(0, 9).join(" ")}
+                                                label={ this.state.texts.consent1 }
                                                 onCheck={this.consent.bind(null, null, 0)}
                                                 checked={this.state.consent[0]}
                                             />
                                             <Checkbox
-                                                label={this.state.dummyText.slice(0, 9).join(" ")}
+                                                label={ this.state.texts.consent2 }
                                                 onCheck={this.consent.bind(null, null, 1)}
                                                 checked={this.state.consent[1]}
                                             />
                                             <Checkbox
-                                                label={this.state.dummyText.slice(0, 9).join(" ")}
+                                                label={ this.state.texts.consent3 }
                                                 onCheck={this.consent.bind(null, null, 2)}
                                                 checked={this.state.consent[2]}
                                             />
                                             <Checkbox
-                                                label={this.state.dummyText.slice(0, 9).join(" ")}
+                                                label={ this.state.texts.consent4 }
                                                 onCheck={this.consent.bind(null, null, 3)}
                                                 checked={this.state.consent[3]}
                                             />
-                                            <p><small>{ this.state.dummyText.slice(0, 18).join(" ") }</small></p>
+                                            <p><small>{ this.state.texts.summarySmall }</small></p>
                                         </div>
                                     </SwipeableViews>
                                     <div style={{textAlign: "center"}}>

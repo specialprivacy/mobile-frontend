@@ -1,0 +1,15 @@
+{
+    "title": "A",
+    "welcomeText": "<p>B</p>",
+    "welcomeSmallText": "C",
+    "page1": "<p>D</p>",
+    "consent1": "E",
+    "page2": "<p>F</p>",
+    "consent2": "G",
+    "page3": "H",
+    "consent3": "I",
+    "page4": "J",
+    "consent4": "K",
+    "summaryText": "L",
+    "summarySmall": "M"
+}
