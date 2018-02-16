@@ -83,7 +83,7 @@ class App extends Component {
                 <div className="container-fluid" style={{marginTop: "15px"}}>
                     <div className="row">
                         <div className="col-md-4 col-md-offset-4 col-sm-12">
-                            <Card>
+                            <Card style={{marginBottom: "20px"}}>
                                 <CardMedia>
                                     <img className="img-responsive" src={this.state.images[this.state.slideIndex]} alt=""/>
                                 </CardMedia>
