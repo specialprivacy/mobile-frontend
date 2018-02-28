@@ -16,7 +16,7 @@ class App extends Component {
         consent: [false, false, false, false],
         images: [
             "GettyImages-506537685.jpg",
-            "GettyImages-163252478.jpg",
+            // "GettyImages-163252478.jpg",
             "GettyImages-486416759.jpg",
             "GettyImages-71930067.jpg",
             "iStock_000043063398_XXXLarge.jpg",
@@ -55,7 +55,7 @@ class App extends Component {
             :
                 null;
         const nextButton =
-            (this.state.slideIndex < 5) ?
+            (this.state.slideIndex < 4) ?
                 <RaisedButton
                     primary={true}
                     className="prox-btn"
@@ -65,7 +65,7 @@ class App extends Component {
             :
                 null;
         const agreeButton =
-            (this.state.slideIndex === 5) ?
+            (this.state.slideIndex === 4) ?
                 <RaisedButton
                     primary={true}
                     className="prox-btn"
@@ -91,6 +91,7 @@ class App extends Component {
                                     <p dangerouslySetInnerHTML={{__html: this.state.texts.welcomeText}}></p>
                                     <p><small>{ this.state.texts.welcomeSmallText }</small></p>
                                 </div>
+                                {/*
                                 <div>
                                     <p dangerouslySetInnerHTML={{__html: this.state.texts.page1}}></p>
                                     <Checkbox
@@ -99,6 +100,7 @@ class App extends Component {
                                         checked={this.state.consent[0]}
                                     />
                                 </div>
+                                */}
                                 <div>
                                     <p dangerouslySetInnerHTML={{__html: this.state.texts.page2}}></p>
                                     <Checkbox
@@ -125,11 +127,13 @@ class App extends Component {
                                 </div>
                                 <div>
                                     <p>{ this.state.texts.summaryText }</p>
+                                    {/*
                                     <Checkbox
                                         label={ this.state.texts.consent1 }
                                         onCheck={this.consent.bind(null, null, 0)}
                                         checked={this.state.consent[0]}
                                     />
+                                    */}
                                     <Checkbox
                                         label={ this.state.texts.consent2 }
                                         onCheck={this.consent.bind(null, null, 1)}
@@ -150,7 +154,7 @@ class App extends Component {
                             </SwipeableViews>
                             <div style={{textAlign: "center"}}>
                                 <Pagination
-                                    dots={6}
+                                    dots={5}
                                     index={this.state.slideIndex}
                                     onChangeIndex={this.handleChangeIndex}
                                 />

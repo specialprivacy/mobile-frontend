@@ -61,7 +61,7 @@ class App extends Component {
                     primary={true}
                     className="prox-btn"
                     label="Agree"
-                    
+
                     onClick={this.agree}
                     disabled={!(this.state.consent[0] || this.state.consent[1] || this.state.consent[2] || this.state.consent[3])}
                 />
@@ -79,7 +79,7 @@ class App extends Component {
                             <h1 style={{marginTop: 0, color: color}}>{this.state.texts.title}</h1>
                             <p dangerouslySetInnerHTML={{__html: this.state.texts.welcomeText}}></p>
                             <p><small>{ this.state.texts.welcomeSmallText }</small></p>
-
+                            {/*
                             <Card className="custom-card" style={{marginBottom: "20px"}}>
                                 <CardHeader
                                     title={<span>
@@ -98,6 +98,7 @@ class App extends Component {
                                     />
                                 </CardText>
                             </Card>
+                            */}
                             <Card className="custom-card" style={{marginBottom: "20px"}}>
                                 <CardHeader
                                     title={<span>
