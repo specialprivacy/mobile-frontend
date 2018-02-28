@@ -2,8 +2,8 @@ import React, {Component} from 'react';
 import './App.css';
 import {Card, CardMedia, CardHeader, CardText, CardActions} from 'material-ui';
 // import SwipeableViews from 'react-swipeable-views';
-// import RaisedButton from 'material-ui/RaisedButton';
-import FlatButton from 'material-ui/FlatButton';
+import RaisedButton from 'material-ui/RaisedButton';
+// import FlatButton from 'material-ui/FlatButton';
 // import Divider from 'material-ui/Divider';
 import Checkbox from 'material-ui/Checkbox';
 
@@ -32,11 +32,12 @@ class App extends Component {
 
     render() {
         const color = "rgb(92, 45, 145)";
-        const colorTwo = "rgb(2, 186, 237)";
+        const colorTwo = "rgb(0, 188, 238)";
         const prevButton =
             (this.state.slideIndex > 0) ?
-                <FlatButton
+                <RaisedButton
                     secondary={true}
+                    className="prox-btn"
                     label="Back"
                     labelStyle={{color: colorTwo}}
                     onClick={this.toggleSlide.bind(null, -1)}
@@ -45,8 +46,9 @@ class App extends Component {
                 null;
         const nextButton =
             (this.state.slideIndex < 0) ?
-                <FlatButton
+                <RaisedButton
                     primary={true}
+                    className="prox-btn"
                     label="Next"
                     labelStyle={{color: color}}
                     onClick={this.toggleSlide.bind(null, 1)}
@@ -55,10 +57,11 @@ class App extends Component {
                 null;
         const agreeButton =
             (this.state.slideIndex === 0) ?
-                <FlatButton
+                <RaisedButton
                     primary={true}
+                    className="prox-btn"
                     label="Agree"
-                    labelStyle={!(this.state.consent[0] || this.state.consent[1] || this.state.consent[2] || this.state.consent[3]) ? {color: "grey"} : {color: color}}
+                    
                     onClick={this.agree}
                     disabled={!(this.state.consent[0] || this.state.consent[1] || this.state.consent[2] || this.state.consent[3])}
                 />
@@ -73,14 +76,14 @@ class App extends Component {
                             <img className="img-responsive" src="images/GettyImages-506537685.jpg" alt=""/>
                         </CardMedia>
                         <CardText>
-                            <h1 style={{marginTop: 0}}>{this.state.texts.title}</h1>
+                            <h1 style={{marginTop: 0, color: color}}>{this.state.texts.title}</h1>
                             <p dangerouslySetInnerHTML={{__html: this.state.texts.welcomeText}}></p>
                             <p><small>{ this.state.texts.welcomeSmallText }</small></p>
 
                             <Card className="custom-card" style={{marginBottom: "20px"}}>
                                 <CardHeader
                                     title={<span>
-                                        <img className="custom-icon" src="icons/icon_Mobile-Telephony_rgb.png" alt=""/>
+                                        <img className="custom-icon" src="icons/icon_Mobile-Telephony_rgb.svg" alt=""/>
                                         {this.state.texts.label2}
                                     </span>}
                                     actAsExpander={true}
@@ -98,7 +101,7 @@ class App extends Component {
                             <Card className="custom-card" style={{marginBottom: "20px"}}>
                                 <CardHeader
                                     title={<span>
-                                        <img className="custom-icon" src="icons/icon_My-Location_rgb.png" alt=""/>
+                                        <img className="custom-icon" src="icons/icon_My-Location_rgb.svg" alt=""/>
                                         {this.state.texts.label2}
                                     </span>}
                                     actAsExpander={true}
@@ -116,7 +119,7 @@ class App extends Component {
                             <Card className="custom-card" style={{marginBottom: "20px"}}>
                                 <CardHeader
                                     title={<span>
-                                        <img className="custom-icon" src="icons/icon_TV_rgb.png" alt=""/>
+                                        <img className="custom-icon" src="icons/icon_TV_rgb.svg" alt=""/>
                                         {this.state.texts.label3}
                                     </span>}
                                     actAsExpander={true}
@@ -134,7 +137,7 @@ class App extends Component {
                             <Card className="custom-card" style={{marginBottom: "20px"}}>
                                 <CardHeader
                                     title={<span>
-                                        <img className="custom-icon" src="icons/icon_World_rgb.png" alt=""/>
+                                        <img className="custom-icon" src="icons/icon_World_rgb.svg" alt=""/>
                                         {this.state.texts.label4}
                                     </span>}
                                     actAsExpander={true}

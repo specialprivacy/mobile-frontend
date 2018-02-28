@@ -2,8 +2,8 @@ import React, {Component} from 'react';
 import './App.css';
 import {CardMedia, CardText, CardActions} from 'material-ui';
 import SwipeableViews from 'react-swipeable-views';
-// import RaisedButton from 'material-ui/RaisedButton';
-import FlatButton from 'material-ui/FlatButton';
+import RaisedButton from 'material-ui/RaisedButton';
+// import FlatButton from 'material-ui/FlatButton';
 // import Divider from 'material-ui/Divider';
 import Checkbox from 'material-ui/Checkbox';
 import Pagination from './Pagination';
@@ -42,10 +42,13 @@ class App extends Component {
     agree = () => { };
 
     render() {
+        const color = "rgb(92, 45, 145)";
+        // const colorTwo = "rgb(0, 188, 238)";
         const prevButton =
             (this.state.slideIndex > 0) ?
-                <FlatButton
+                <RaisedButton
                     secondary={true}
+                    className="prox-btn"
                     label="Back"
                     onClick={this.toggleSlide.bind(null, -1)}
                 />
@@ -53,8 +56,9 @@ class App extends Component {
                 null;
         const nextButton =
             (this.state.slideIndex < 5) ?
-                <FlatButton
+                <RaisedButton
                     primary={true}
+                    className="prox-btn"
                     label="Next"
                     onClick={this.toggleSlide.bind(null, 1)}
                 />
@@ -62,8 +66,9 @@ class App extends Component {
                 null;
         const agreeButton =
             (this.state.slideIndex === 5) ?
-                <FlatButton
+                <RaisedButton
                     primary={true}
+                    className="prox-btn"
                     label="Agree"
                     labelStyle={!(this.state.consent[0] || this.state.consent[1] || this.state.consent[2] || this.state.consent[3]) ? {color: "grey"} : {}}
                     onClick={this.agree}
@@ -82,7 +87,7 @@ class App extends Component {
                         <CardText style={{paddingBottom: 0}}>
                             <SwipeableViews index={this.state.slideIndex}>
                                 <div>
-                                    <h1 style={{marginTop: 0}}>{ this.state.texts.title }</h1>
+                                    <h1 style={{marginTop: 0, color: color}}>{ this.state.texts.title }</h1>
                                     <p dangerouslySetInnerHTML={{__html: this.state.texts.welcomeText}}></p>
                                     <p><small>{ this.state.texts.welcomeSmallText }</small></p>
                                 </div>

@@ -36,7 +36,7 @@ class AppContainer extends Component {
             <MuiThemeProvider muiTheme={muiTheme}>
                 <div>
                     <AppBar
-                        title="Proximus"
+                        title={<img src="proximus_logo.svg" title="Proximus" alt="Proximus" width="128px" />}
                         showMenuIconButton={false}
                         style={{background: "linear-gradient(to right, rgb(92, 45, 145), rgb(0, 188, 238)"}}
                     />
