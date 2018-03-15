@@ -7,7 +7,7 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: "Proximus-regular" !important;
+    /* font-family: "Proximus-regular" !important; */
 }
 
 .custom-card {
@@ -32,4 +32,8 @@ body {
 
 .prox-btn button {
     border-radius: 0 0 14px !important;
+}
+
+.special-logo-right {
+    width: 10% !important;
 }

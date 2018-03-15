@@ -31,8 +31,8 @@ class App extends Component {
     agree = () => { };
 
     render() {
-        const color = "rgb(92, 45, 145)";
-        const colorTwo = "rgb(0, 188, 238)";
+        const color = "rgb(102, 52, 141)";
+        const colorTwo = "rgb(238, 13, 137)";
         const prevButton =
             (this.state.slideIndex > 0) ?
                 <RaisedButton
@@ -73,7 +73,7 @@ class App extends Component {
                 <div className="row">
                     <div className="col-md-4 col-md-offset-4 col-sm-12" style={{padding: 0}}>
                         <CardMedia>
-                            <img className="img-responsive" src="images/GettyImages-506537685.jpg" alt=""/>
+                            <img className="special-logo" src="images/special_logo_alpha.png" alt=""/>
                         </CardMedia>
                         <CardText>
                             <h1 style={{marginTop: 0, color: color}}>{this.state.texts.title}</h1>
@@ -99,10 +99,25 @@ class App extends Component {
                                 </CardText>
                             </Card>
                             */}
-                            <Card className="custom-card" style={{marginBottom: "20px"}}>
+                            <Card className="custom-card" style={{marginBottom: "20px"}} initiallyExpanded={true}>
+                              <CardHeader
+                                title={<span><img className="custom-icon" src="icons/ic_favorite_black_48px.svg" alt=""/>{this.state.texts.label1}</span>}
+                                actAsExpander={true}
+                                showExpandableButton={true}
+                              />
+                              <CardText expandable={true}>
+                                <p dangerouslySetInnerHTML={{__html: this.state.texts.page1}}></p>
+                                <Checkbox
+                                  label={this.state.texts.consent1}
+                                  onCheck={this.consent.bind(null, null, 0)}
+                                  checked={this.state.consent[0]}
+                                />
+                              </CardText>
+                            </Card>
+                            <Card className="custom-card" style={{marginBottom: "20px"}} initiallyExpanded={true}>
                                 <CardHeader
                                     title={<span>
-                                        <img className="custom-icon" src="icons/icon_My-Location_rgb.svg" alt=""/>
+                                        <img className="custom-icon" src="icons/ic_location_on_black_48px.svg" alt=""/>
                                         {this.state.texts.label2}
                                     </span>}
                                     actAsExpander={true}
@@ -117,10 +132,10 @@ class App extends Component {
                                     />
                                 </CardText>
                             </Card>
-                            <Card className="custom-card" style={{marginBottom: "20px"}}>
+                            <Card className="custom-card" style={{marginBottom: "20px"}} initiallyExpanded={true}>
                                 <CardHeader
                                     title={<span>
-                                        <img className="custom-icon" src="icons/icon_TV_rgb.svg" alt=""/>
+                                        <img className="custom-icon" src="icons/ic_person_black_48px.svg" alt=""/>
                                         {this.state.texts.label3}
                                     </span>}
                                     actAsExpander={true}
@@ -135,10 +150,10 @@ class App extends Component {
                                     />
                                 </CardText>
                             </Card>
-                            <Card className="custom-card" style={{marginBottom: "20px"}}>
+                            <Card className="custom-card" style={{marginBottom: "20px"}} initiallyExpanded={true}>
                                 <CardHeader
-                                    title={<span>
-                                        <img className="custom-icon" src="icons/icon_World_rgb.svg" alt=""/>
+            title={<span style={{whiteSpace: "nowrap"}}>
+                                        <img className="custom-icon" src="icons/ic_directions_run_black_48px.svg" alt=""/>
                                         {this.state.texts.label4}
                                     </span>}
                                     actAsExpander={true}

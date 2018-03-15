@@ -6,10 +6,10 @@ import getMuiTheme from "material-ui/styles/getMuiTheme";
 import AppBar from "material-ui/AppBar";
 
 const muiTheme = getMuiTheme({
-    fontFamily: "Proximus-regular",
+    // fontFamily: "Proximus-regular",
     palette: {
-        primary1Color: "rgb(92, 45, 145)",
-        accent1Color: "rgb(0, 188, 238)",
+        primary1Color: "rgb(102, 52, 141)",
+        accent1Color: "rgb(238, 13, 137)",
     }
 });
 
@@ -33,12 +33,13 @@ class AppContainer extends Component {
         }
 
         return(
-            <MuiThemeProvider muiTheme={muiTheme}>
+                <MuiThemeProvider muiTheme={muiTheme}>
                 <div>
                     <AppBar
-                        title={<img src="proximus_logo.svg" title="Proximus" alt="Proximus" width="128px" />}
+            iconStyleRight={{width: "15%", height: "50px"}}
+            iconElementRight={<img alt="Special" style={{"float": "right", position: "relative", width: "auto", height: "100%"}} src="special_logo_crop_alpha.png"/>}
+                        title="BeFit"
                         showMenuIconButton={false}
-                        style={{background: "linear-gradient(to right, rgb(92, 45, 145), rgb(0, 188, 238)"}}
                     />
                     {content}
                 </div>
