@@ -37,7 +37,6 @@ class App extends Component {
             (this.state.slideIndex > 0) ?
                 <RaisedButton
                     secondary={true}
-                    className="prox-btn"
                     label="Back"
                     labelStyle={{color: colorTwo}}
                     onClick={this.toggleSlide.bind(null, -1)}
@@ -48,7 +47,6 @@ class App extends Component {
             (this.state.slideIndex < 0) ?
                 <RaisedButton
                     primary={true}
-                    className="prox-btn"
                     label="Next"
                     labelStyle={{color: color}}
                     onClick={this.toggleSlide.bind(null, 1)}
@@ -59,7 +57,6 @@ class App extends Component {
             (this.state.slideIndex === 0) ?
                 <RaisedButton
                     primary={true}
-                    className="prox-btn"
                     label="Agree"
 
                     onClick={this.agree}

@@ -49,7 +49,6 @@ class App extends Component {
             (this.state.slideIndex > 0) ?
                 <RaisedButton
                     secondary={true}
-                    className="prox-btn"
                     label="Back"
                     onClick={this.toggleSlide.bind(null, -1)}
                 />
@@ -59,7 +58,6 @@ class App extends Component {
             (this.state.slideIndex < 5) ?
                 <RaisedButton
                     primary={true}
-                    className="prox-btn"
                     label="Next"
                     onClick={this.toggleSlide.bind(null, 1)}
                 />
@@ -69,7 +67,6 @@ class App extends Component {
             (this.state.slideIndex === 5) ?
                 <RaisedButton
                     primary={true}
-                    className="prox-btn"
                     label="Agree"
                     labelStyle={!(this.state.consent[0] || this.state.consent[1] || this.state.consent[2] || this.state.consent[3]) ? {color: "grey"} : {}}
                     onClick={this.toggleSlide.bind(null, 1)}
