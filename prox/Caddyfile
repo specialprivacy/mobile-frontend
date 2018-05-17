@@ -1,4 +1,4 @@
-:80/mobile
+:80
 
 # Fetch the request-id or get a new one
 request_id x-request-id
