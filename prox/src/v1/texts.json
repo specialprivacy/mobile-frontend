@@ -1,6 +1,6 @@
 {
   "title": "Sport and dining recommendations at your fingertips",
-  "welcomeText": "<p>Sign up for free for intelligent lifestyle recommendations tailored to you.</p>",
+  "welcomeText": "Sign up for free for intelligent lifestyle recommendations tailored to you.",
   "welcomeSmallText": "At least one of the following data categories is needed to make recommendations.",
   "label1": "Heartrate data",
   "page1": "Your heartrate can help us figure out when you are exercising and sleeping.",
@@ -15,5 +15,6 @@
   "page4": "Your calorie consumption helps us find the right activities for you.",
   "consent4": "Yes, I agree that BeFit uses the calories I consume.",
   "summaryText": "",
-  "summarySmall": ""
+  "summarySmall": "",
+  "boxlabel": "Yes, I grant BeFit the right to use this data under these conditions"
 }

@@ -43,7 +43,7 @@ class App extends Component {
     agree = () => { };
 
     render() {
-        const color = "rgb(92, 45, 145)";
+        const color = "rgb(1, 166, 155)";
         // const colorTwo = "rgb(0, 188, 238)";
         const prevButton =
             (this.state.slideIndex > 0) ?
@@ -191,7 +191,7 @@ class App extends Component {
                             </SwipeableViews>
                             <div style={{textAlign: "center"}}>
                                 <Pagination
-                                    dots={5}
+                                    dots={7}
                                     index={this.state.slideIndex}
                                     onChangeIndex={this.handleChangeIndex}
                                 />

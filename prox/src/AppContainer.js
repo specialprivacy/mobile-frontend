@@ -8,8 +8,8 @@ import AppBar from "material-ui/AppBar";
 const muiTheme = getMuiTheme({
     // fontFamily: "Proximus-regular",
     palette: {
-        primary1Color: "rgb(102, 52, 141)",
-        accent1Color: "rgb(238, 13, 137)",
+        primary1Color: "rgb(1, 166, 155)",
+        accent1Color: "rgb(255, 172, 79)",
     }
 });
 
