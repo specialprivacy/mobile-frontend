@@ -1,4 +1,6 @@
 # Mobile Consent UI
+
+## Description
 An implemenation of the mobile consent UI designed by TUB for WP 4.
 
 ## Run
@@ -28,7 +30,3 @@ npm start
 docker build -t mobile-frontend .
 docker run -p "80:80" mobile-frontend
 ```
-
-## TODO
-* Move http request code into a separate module.
-* Code and file structure can use some more refactoring
